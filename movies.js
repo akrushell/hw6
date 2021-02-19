@@ -38,15 +38,15 @@ for(let i = 0; i < movies.length; i++){
 
   document.querySelector('.movies').insertAdjacentHTML('beforeend', `<div class=".movies-${movieId} w-1/5 p-4">
 
-  <img src="https://image.tmdb.org/t/p/w500/${poster}" class="w-full">
-  <a href="#" class="watched-button block text-center text-white bg-green-500 mt-4 px-4 py-2 rounded">Watched✓</a>
+  <img src="https://image.tmdb.org/t/p/w500/${poster}" class="w-full-${movieId}">
+  <a href="#" class="watched-button-${movieId} block text-center text-white bg-green-500 mt-4 px-4 py-2 rounded">Watched✓</a>
   </div>
   `)
 
-  document.querySelector(`.watched-button`).addEventListener('click', async function(event){
+  document.querySelector(`.watched-button-${movieId}`).addEventListener('click', async function(event){
     event.preventDefault()
 
-    document.querySelector('.movies').classList.add('opacity-20')
+    document.querySelector(`.w-full-${movieId}`).classList.add('opacity-20')
     
     console.log(`Alexis watched ${movieId}.`)
 
